@@ -121,6 +121,28 @@ cards.forEach(card => {
     observer.observe(card);
 });
 
+// Observe education items
+const educationItems = document.querySelectorAll('.education-item');
+educationItems.forEach(item => {
+    observer.observe(item);
+});
+
+// Observe experience items with staggered animation
+const experienceItems = document.querySelectorAll('.experience-item');
+const experienceObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add('visible');
+            }, index * 150); // Stagger animation
+        }
+    });
+}, observerOptions);
+
+experienceItems.forEach(item => {
+    experienceObserver.observe(item);
+});
+
 // Prevent default click for placeholder project links
 const projectLinks = document.querySelectorAll('.project-link');
 projectLinks.forEach(link => {

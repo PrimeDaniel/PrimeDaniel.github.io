@@ -155,9 +155,35 @@ body {
 
 .hero-description {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     opacity: 0.9;
     animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+.hero-contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+.hero-contact-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-contact-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
 .hero-buttons {
@@ -237,6 +263,218 @@ section {
     color: var(--text-light);
     margin-bottom: 1.5rem;
     line-height: 1.8;
+}
+
+.about-text p strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Experience Section */
+.experience {
+    background: white;
+}
+
+.experience-timeline {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    opacity: 0.3;
+}
+
+.experience-item {
+    position: relative;
+    padding-left: 80px;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.6s ease;
+}
+
+.experience-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.experience-company {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.experience-company h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.experience-location {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.experience-date {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.experience-title {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.experience-content {
+    background: var(--background-light);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.experience-section {
+    margin-bottom: 1rem;
+}
+
+.experience-section:last-child {
+    margin-bottom: 0;
+}
+
+.experience-section h5 {
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.experience-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experience-content li {
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.experience-content li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.experience-content li:last-child {
+    margin-bottom: 0;
+}
+
+.experience-content li strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Education Section */
+.education {
+    background: var(--background-light);
+}
+
+.education-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.education-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.education-header h3 {
+    font-size: 1.75rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.education-date {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.education-degree {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.education-honor {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 /* Skills Section */
@@ -484,6 +722,32 @@ section {
 
     .contact-methods {
         grid-template-columns: 1fr;
+    }
+
+    .hero-contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-contact-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    .experience-timeline::before {
+        left: 15px;
+    }
+
+    .experience-item {
+        padding-left: 50px;
+    }
+
+    .experience-item::before {
+        left: 7px;
+    }
+
+    .experience-header {
+        flex-direction: column;
     }
 }
 
