@@ -39,18 +39,63 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Navbar scroll effect
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
+const sections = document.querySelectorAll('section[id]');
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+// Throttle function for scroll events
+function throttle(func, delay) {
+    let timeoutId;
+    let lastExecTime = 0;
+    return function(...args) {
+        const currentTime = Date.now();
+        const timeSinceLastExec = currentTime - lastExecTime;
+        
+        if (timeSinceLastExec >= delay) {
+            lastExecTime = currentTime;
+            func.apply(this, args);
+        }
+    };
+}
+
+// Combined scroll handler
+const handleScroll = throttle(() => {
+    const scrollY = window.pageYOffset;
     
-    if (currentScroll <= 0) {
+    // Navbar shadow effect
+    if (scrollY <= 0) {
         navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
     } else {
         navbar.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
     }
     
-    lastScroll = currentScroll;
-});
+    // Active nav link
+    let current = '';
+    sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            current = sectionId;
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+    
+    // Parallax effect on hero
+    const hero = document.querySelector('.hero-content');
+    if (hero && scrollY < window.innerHeight) {
+        hero.style.transform = `translateY(${scrollY * 0.3}px)`;
+    }
+    
+    lastScroll = scrollY;
+}, 100);
+
+window.addEventListener('scroll', handleScroll);
 
 // Intersection Observer for scroll animations
 const observerOptions = {
@@ -74,40 +119,6 @@ cards.forEach(card => {
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'all 0.6s ease';
     observer.observe(card);
-});
-
-// Active nav link on scroll
-const sections = document.querySelectorAll('section[id]');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollY = window.pageYOffset;
-    
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            current = sectionId;
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Add a subtle parallax effect to hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero-content');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-    }
 });
 
 // Prevent default click for placeholder project links
