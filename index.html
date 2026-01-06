@@ -3,189 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Daniel's Portfolio - Software Developer">
-    <title>Daniel's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Daniel | Developer Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
+
     <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">Daniel</div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="logo">Daniel<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact" class="btn-primary">Contact Me</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Daniel</span></h1>
-                <h2 class="hero-subtitle">Software Developer & Problem Solver</h2>
-                <p class="hero-description">I build elegant solutions to complex problems through code.</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="gradient-text">Daniel</span></h1>
+            <h2>Creative Web Developer</h2>
+            <p>I build modern, responsive, and user-friendly websites.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I am a passionate developer dedicated to creating intuitive digital experiences. With a strong foundation in web technologies, I turn complex problems into elegant solutions. I love learning new tools and improving my craft every day.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container bg-alt">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card"><i class="fab fa-html5"></i><h3>HTML5</h3></div>
+            <div class="skill-card"><i class="fab fa-css3-alt"></i><h3>CSS3</h3></div>
+            <div class="skill-card"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
+            <div class="skill-card"><i class="fab fa-react"></i><h3>React</h3></div>
+            <div class="skill-card"><i class="fab fa-git-alt"></i><h3>Git</h3></div>
+            <div class="skill-card"><i class="fas fa-terminal"></i><h3>Command Line</h3></div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2 class="section-title">My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Portfolio Website</h3>
+                    <p>A personal portfolio built with HTML, CSS, and JS.</p>
+                    <div class="tags">
+                        <span>HTML</span><span>CSS</span>
+                    </div>
+                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>E-Commerce Dashboard</h3>
+                    <p>A responsive admin dashboard with data visualization.</p>
+                    <div class="tags">
+                        <span>React</span><span>Node</span>
+                    </div>
+                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-info">
+                    <h3>Task App</h3>
+                    <p>A productivity application to manage daily tasks.</p>
+                    <div class="tags">
+                        <span>JS</span><span>Local Storage</span>
+                    </div>
+                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Hello! I'm Daniel, a passionate software developer with a keen interest in creating innovative solutions. I love turning ideas into reality through clean, efficient code.</p>
-                    <p>With expertise in web development and a strong foundation in computer science, I'm always eager to learn new technologies and tackle challenging projects.</p>
-                    <p>When I'm not coding, you can find me exploring new tech trends, contributing to open source, or sharing knowledge with the developer community.</p>
-                </div>
-            </div>
-        </div>
+    <section id="contact" class="container bg-alt">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="contact-subtitle">Have a project in mind? Let's talk.</p>
+        <a href="mailto:email@example.com" class="btn-primary large">Say Hello</a>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">💻</div>
-                    <h3>Frontend Development</h3>
-                    <p>HTML, CSS, JavaScript, React, Vue.js</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">⚙️</div>
-                    <h3>Backend Development</h3>
-                    <p>Node.js, Python, Java, Express, Django</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🗄️</div>
-                    <h3>Database</h3>
-                    <p>MySQL, PostgreSQL, MongoDB, Redis</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🔧</div>
-                    <h3>Tools & DevOps</h3>
-                    <p>Git, Docker, AWS, CI/CD, Linux</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">📱</div>
-                    <h3>Mobile Development</h3>
-                    <p>React Native, Flutter, Progressive Web Apps</p>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
-                    <h3>Design</h3>
-                    <p>UI/UX, Responsive Design, Accessibility</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">📝</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>CEMS (Exam Management System)</h3>
-                        <p>Developed a Lecturer Management System empowering faculty to manage exams and students. Built with modern Java technologies and database integration.</p>
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">JavaFX</span>
-                            <span class="tag">MySQL</span>
-                            <span class="tag">OCSF</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">₿</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Cryptocurrency Simulator</h3>
-                        <p>Built a zero-risk, real-time cryptocurrency trading platform integrating live market data via API. Implemented full buying/selling option logic to simulate a realistic trading environment.</p>
-                        <div class="project-tags">
-                            <span class="tag">Node.js</span>
-                            <span class="tag">Express</span>
-                            <span class="tag">React</span>
-                            <span class="tag">Tailwind CSS</span>
-                            <span class="tag">GeckoApi</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder">🔍</div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Nvidia Search Engine</h3>
-                        <p>Created a custom searching platform featuring a self-developed page ranking system. Utilized advanced algorithms for optimal search results.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">Jupyter</span>
-                            <span class="tag">Google Colab</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p class="contact-description">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
-                <div class="contact-methods">
-                    <a href="mailto:Dfraimo@gmail.com" class="contact-method">
-                        <span class="contact-icon">📧</span>
-                        <span>Dfraimo@gmail.com</span>
-                    </a>
-                    <a href="tel:+972526838351" class="contact-method">
-                        <span class="contact-icon">📱</span>
-                        <span>052-6838351</span>
-                    </a>
-                    <a href="https://linkedin.com/in/danny-fraimovich" class="contact-method" target="_blank" rel="noopener noreferrer">
-                        <span class="contact-icon">💼</span>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/PrimeDaniel" class="contact-method" target="_blank" rel="noopener noreferrer">
-                        <span class="contact-icon">🔗</span>
-                        <span>GitHub</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Daniel. Built with ❤️ and deployed on GitHub Pages.</p>
-        </div>
+    <footer>
+        <p>&copy; 2026 Daniel. Built with 💻 and ☕.</p>
     </footer>
 
     <script src="script.js"></script>
