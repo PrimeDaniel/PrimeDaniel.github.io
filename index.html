@@ -32,14 +32,42 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <canvas id="particles-canvas"></canvas>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Daniel</span></h1>
-                <h2 class="hero-subtitle">Software Developer & Problem Solver</h2>
+                <div class="hero-badge">👋 Welcome</div>
+                <h1 class="hero-title">
+                    <span class="title-line">Hi, I'm</span>
+                    <span class="highlight">Daniel</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    <span class="typing-text">Software Developer</span>
+                    <span class="cursor-blink">|</span>
+                </h2>
                 <p class="hero-description">I build elegant solutions to complex problems through code.</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#projects" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <div class="arrow">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,34 +93,70 @@
             <h2 class="section-title">Skills & Technologies</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <div class="skill-icon">💻</div>
+                    <div class="skill-icon-wrapper">
+                        <div class="skill-icon">💻</div>
+                        <div class="skill-glow"></div>
+                    </div>
                     <h3>Frontend Development</h3>
                     <p>HTML, CSS, JavaScript, React, Vue.js</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 90%"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">⚙️</div>
+                    <div class="skill-icon-wrapper">
+                        <div class="skill-icon">⚙️</div>
+                        <div class="skill-glow"></div>
+                    </div>
                     <h3>Backend Development</h3>
                     <p>Node.js, Python, Java, Express, Django</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 85%"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">🗄️</div>
+                    <div class="skill-icon-wrapper">
+                        <div class="skill-icon">🗄️</div>
+                        <div class="skill-glow"></div>
+                    </div>
                     <h3>Database</h3>
                     <p>MySQL, PostgreSQL, MongoDB, Redis</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 80%"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">🔧</div>
+                    <div class="skill-icon-wrapper">
+                        <div class="skill-icon">🔧</div>
+                        <div class="skill-glow"></div>
+                    </div>
                     <h3>Tools & DevOps</h3>
                     <p>Git, Docker, AWS, CI/CD, Linux</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 75%"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">📱</div>
+                    <div class="skill-icon-wrapper">
+                        <div class="skill-icon">📱</div>
+                        <div class="skill-glow"></div>
+                    </div>
                     <h3>Mobile Development</h3>
                     <p>React Native, Flutter, Progressive Web Apps</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 70%"></div>
+                    </div>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
+                    <div class="skill-icon-wrapper">
+                        <div class="skill-icon">🎨</div>
+                        <div class="skill-glow"></div>
+                    </div>
                     <h3>Design</h3>
                     <p>UI/UX, Responsive Design, Accessibility</p>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: 85%"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,7 +169,22 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
+                        <div class="project-overlay"></div>
                         <div class="project-placeholder">📝</div>
+                        <div class="project-links-overlay">
+                            <a href="#" class="project-link-icon" title="View Project">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M15 3h6v6" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M10 14L21 3" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="project-link-icon" title="View Code">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>CEMS (Exam Management System)</h3>
@@ -120,7 +199,22 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image">
+                        <div class="project-overlay"></div>
                         <div class="project-placeholder">₿</div>
+                        <div class="project-links-overlay">
+                            <a href="#" class="project-link-icon" title="View Project">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M15 3h6v6" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M10 14L21 3" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="project-link-icon" title="View Code">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>Cryptocurrency Simulator</h3>
@@ -136,7 +230,22 @@
                 </div>
                 <div class="project-card">
                     <div class="project-image">
+                        <div class="project-overlay"></div>
                         <div class="project-placeholder">🔍</div>
+                        <div class="project-links-overlay">
+                            <a href="#" class="project-link-icon" title="View Project">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M15 3h6v6" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M10 14L21 3" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="project-link-icon" title="View Code">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3>Nvidia Search Engine</h3>
