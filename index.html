@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -32,14 +34,8 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <canvas id="particles-canvas"></canvas>
-        <div class="floating-shapes">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
+        <div class="container hero-split">
+            <div class="hero-text-content">
                 <div class="hero-badge">👋 Welcome</div>
                 <h1 class="hero-title">
                     <span class="title-line">Hi, I'm</span>
@@ -54,21 +50,27 @@
                     <a href="#projects" class="btn btn-primary">
                         <span>View My Work</span>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
-                <div class="scroll-indicator">
-                    <div class="mouse">
-                        <div class="wheel"></div>
-                    </div>
-                    <div class="arrow">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
+            </div>
+
+            <div class="hero-3d">
+                <canvas id="spline-canvas"></canvas>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </section>
@@ -79,9 +81,12 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Hello! I'm Daniel, a passionate software developer with a keen interest in creating innovative solutions. I love turning ideas into reality through clean, efficient code.</p>
-                    <p>With expertise in web development and a strong foundation in computer science, I'm always eager to learn new technologies and tackle challenging projects.</p>
-                    <p>When I'm not coding, you can find me exploring new tech trends, contributing to open source, or sharing knowledge with the developer community.</p>
+                    <p>Hello! I'm Daniel, a passionate software developer with a keen interest in creating innovative
+                        solutions. I love turning ideas into reality through clean, efficient code.</p>
+                    <p>With expertise in web development and a strong foundation in computer science, I'm always eager
+                        to learn new technologies and tackle challenging projects.</p>
+                    <p>When I'm not coding, you can find me exploring new tech trends, contributing to open source, or
+                        sharing knowledge with the developer community.</p>
                 </div>
             </div>
         </div>
@@ -174,21 +179,25 @@
                         <div class="project-links-overlay">
                             <a href="#" class="project-link-icon" title="View Project">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M15 3h6v6" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M10 14L21 3" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" />
+                                    <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" />
                                 </svg>
                             </a>
                             <a href="#" class="project-link-icon" title="View Code">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2"/>
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                        stroke="currentColor" stroke-width="2" />
                                 </svg>
                             </a>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3>CEMS (Exam Management System)</h3>
-                        <p>Developed a Lecturer Management System empowering faculty to manage exams and students. Built with modern Java technologies and database integration.</p>
+                        <p>Developed a Lecturer Management System empowering faculty to manage exams and students. Built
+                            with modern Java technologies and database integration.</p>
                         <div class="project-tags">
                             <span class="tag">Java</span>
                             <span class="tag">JavaFX</span>
@@ -204,21 +213,26 @@
                         <div class="project-links-overlay">
                             <a href="#" class="project-link-icon" title="View Project">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M15 3h6v6" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M10 14L21 3" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" />
+                                    <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" />
                                 </svg>
                             </a>
                             <a href="#" class="project-link-icon" title="View Code">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2"/>
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                        stroke="currentColor" stroke-width="2" />
                                 </svg>
                             </a>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3>Cryptocurrency Simulator</h3>
-                        <p>Built a zero-risk, real-time cryptocurrency trading platform integrating live market data via API. Implemented full buying/selling option logic to simulate a realistic trading environment.</p>
+                        <p>Built a zero-risk, real-time cryptocurrency trading platform integrating live market data via
+                            API. Implemented full buying/selling option logic to simulate a realistic trading
+                            environment.</p>
                         <div class="project-tags">
                             <span class="tag">Node.js</span>
                             <span class="tag">Express</span>
@@ -235,21 +249,25 @@
                         <div class="project-links-overlay">
                             <a href="#" class="project-link-icon" title="View Project">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M15 3h6v6" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M10 14L21 3" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M15 3h6v6" stroke="currentColor" stroke-width="2" />
+                                    <path d="M10 14L21 3" stroke="currentColor" stroke-width="2" />
                                 </svg>
                             </a>
                             <a href="#" class="project-link-icon" title="View Code">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2"/>
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                        stroke="currentColor" stroke-width="2" />
                                 </svg>
                             </a>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3>Nvidia Search Engine</h3>
-                        <p>Created a custom searching platform featuring a self-developed page ranking system. Utilized advanced algorithms for optimal search results.</p>
+                        <p>Created a custom searching platform featuring a self-developed page ranking system. Utilized
+                            advanced algorithms for optimal search results.</p>
                         <div class="project-tags">
                             <span class="tag">Python</span>
                             <span class="tag">Firebase</span>
@@ -267,7 +285,8 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
-                <p class="contact-description">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+                <p class="contact-description">I'm always open to new opportunities and collaborations. Feel free to
+                    reach out!</p>
                 <div class="contact-methods">
                     <a href="mailto:Dfraimo@gmail.com" class="contact-method">
                         <span class="contact-icon">📧</span>
@@ -277,11 +296,13 @@
                         <span class="contact-icon">📱</span>
                         <span>052-6838351</span>
                     </a>
-                    <a href="https://linkedin.com/in/danny-fraimovich" class="contact-method" target="_blank" rel="noopener noreferrer">
+                    <a href="https://linkedin.com/in/danny-fraimovich" class="contact-method" target="_blank"
+                        rel="noopener noreferrer">
                         <span class="contact-icon">💼</span>
                         <span>LinkedIn</span>
                     </a>
-                    <a href="https://github.com/PrimeDaniel" class="contact-method" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/PrimeDaniel" class="contact-method" target="_blank"
+                        rel="noopener noreferrer">
                         <span class="contact-icon">🔗</span>
                         <span>GitHub</span>
                     </a>
@@ -298,5 +319,17 @@
     </footer>
 
     <script src="script.js"></script>
+    <script type="module">
+        import { Application } from 'https://esm.sh/@splinetool/runtime';
+
+        const canvas = document.getElementById('spline-canvas');
+        if (canvas) {
+            const spline = new Application(canvas);
+            spline.load('https://prod.spline.design/ZNODXKc8kUxxlbtC/scene.splinecode')
+                .then(() => console.log('Spline scene loaded!'))
+                .catch(err => console.error('Error loading Spline scene:', err));
+        }
+    </script>
 </body>
+
 </html>
