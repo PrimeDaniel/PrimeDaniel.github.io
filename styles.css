@@ -143,8 +143,10 @@ body {
     align-items: center;
     width: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 5;
     padding: 100px 0 50px;
+    pointer-events: none;
+    /* Let mouse touch canvas */
 }
 
 .hero-text-content {
@@ -159,13 +161,28 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 1;
+    height: calc(100% + 60px);
+    /* Extends below container to clip out watermark */
+    z-index: 0;
     outline: none;
     border: none;
     background: transparent;
     pointer-events: auto;
     /* Allow interactions with Spline */
+}
+
+/* Gradient overlay so text is readable on top of light 3D backdrops */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Update gradient to a purple fade matching var(--primary-color) and var(--secondary-color) */
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.8) 0%, rgba(139, 92, 246, 0.4) 50%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero-badge {
@@ -264,6 +281,8 @@ body {
     flex-wrap: wrap;
     justify-content: flex-start;
     animation: fadeInUp 0.8s ease 0.6s both;
+    pointer-events: auto;
+    /* Make buttons clickable again */
 }
 
 .btn {
@@ -333,8 +352,9 @@ body {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 2;
+    z-index: 5;
     animation: fadeInUp 0.8s ease 1s both;
+    pointer-events: none;
 }
 
 .mouse {
